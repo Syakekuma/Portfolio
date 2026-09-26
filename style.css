@@ -762,7 +762,7 @@ body {
 @media (max-width: 700px) {
 
     .header {
-        padding: 18px 20px;
+    padding: 14px 12px;
     }
 
     .logo {
@@ -772,7 +772,7 @@ body {
     }
 
     .nav {
-        gap: 9px;
+        gap: 6px;
         flex-wrap: nowrap;
         white-space: nowrap;
     }
@@ -788,13 +788,17 @@ body {
     ========================= */
 
     .hero {
-        min-height: 75vh;
+    min-height: 100vh;
     }
 
     .hero-content {
-        transform: none;
-        position: relative;
-        z-index: 2;
+    position: relative;
+    z-index: 2;
+    }
+
+    .hero-catch {
+    font-size: 20px;
+    white-space: nowrap;
     }
 
     .hero-character {
@@ -812,9 +816,9 @@ body {
         padding: 80px 20px;
     }
 
-    .section-title {
-        font-size: 24px;
-        white-space: nowrap;
+    .section h2 {
+    font-size: 38px;
+    white-space: nowrap;
     }
 
 
@@ -908,6 +912,8 @@ body {
         justify-content: center;
         text-align: center;
         box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
     }
 
 }

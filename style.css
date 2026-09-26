@@ -44,7 +44,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    padding: 25px 50px;
+    padding: 18px max(30px, calc((100% - 900px) / 2));
 
     background: rgba(255, 255, 255, 0.94);
 
@@ -194,7 +194,7 @@ body {
 }
 
 .section-inner {
-    max-width: 1100px;
+    max-width: 900px;
 
     margin: 0 auto;
 }
@@ -334,7 +334,7 @@ body {
 .year-work {
     display: grid;
 
-    grid-template-columns: 170px 1fr auto;
+    grid-template-columns: 150px 1fr 130px;
 
     align-items: center;
 

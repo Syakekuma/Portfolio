@@ -162,10 +162,9 @@ body {
 
 .hero-name {
     font-size: 13px;
-
     color: #888888;
-
     letter-spacing: 0.15em;
+    margin-bottom: 20px;
 }
 
 .scroll {

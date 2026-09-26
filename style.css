@@ -46,13 +46,13 @@ body {
 
     padding: 25px 50px;
 
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.94);
 
     backdrop-filter: blur(10px);
 
-    z-index: 1000;
-
     border-bottom: 1px solid #eeeeee;
+
+    z-index: 1000;
 }
 
 .logo {
@@ -101,8 +101,6 @@ body {
 
     display: flex;
 
-    flex-direction: column;
-
     justify-content: center;
 
     align-items: center;
@@ -111,9 +109,9 @@ body {
 
     padding: 120px 30px;
 
-    overflow: hidden;
-
     background: #f7f7f7;
+
+    overflow: hidden;
 }
 
 .hero-overlay {
@@ -121,7 +119,7 @@ body {
 
     inset: 0;
 
-    background: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.4);
 
     z-index: 1;
 }
@@ -149,17 +147,17 @@ body {
 
     font-weight: 700;
 
-    letter-spacing: 0.08em;
-
     line-height: 1;
+
+    letter-spacing: 0.08em;
 }
 
 .hero-catch {
+    margin-bottom: 10px;
+
     font-size: clamp(22px, 3vw, 36px);
 
     letter-spacing: 0.08em;
-
-    margin-bottom: 12px;
 }
 
 .hero-name {
@@ -212,7 +210,7 @@ body {
 }
 
 .section h2 {
-    margin-bottom: 70px;
+    margin-bottom: 25px;
 
     font-size: clamp(50px, 8vw, 90px);
 
@@ -224,9 +222,11 @@ body {
 }
 
 .section-description {
-    margin-bottom: 60px;
+    margin-bottom: 65px;
 
     color: #666666;
+
+    font-size: 14px;
 }
 
 
@@ -234,12 +234,206 @@ body {
    WORKS
 ========================= */
 
-.works-playlist {
-    margin-bottom: 120px;
+.works-feature-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 70px;
 }
 
-.works-heading {
+.content-card {
+    padding: 22px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+.content-card h3 {
+    margin-bottom: 20px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+.embed-placeholder {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #eeeeee;
+
+    border-radius: 7px;
+
+    color: #999999;
+
+    font-size: 11px;
+
+    letter-spacing: 0.12em;
+
+    margin-bottom: 15px;
+}
+
+.card-link {
+    color: #555555;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: opacity 0.3s;
+}
+
+.card-link:hover {
+    opacity: 0.5;
+}
+
+
+/* =========================
+   YEAR CARD
+========================= */
+
+.year-card {
     margin-bottom: 30px;
+
+    padding: 30px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+.year-card-title {
+    margin-bottom: 25px;
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+}
+
+.year-work-list {
+    border-top: 1px solid #dddddd;
+}
+
+.year-work {
+    display: grid;
+
+    grid-template-columns: 170px 1fr auto;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 20px 5px;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+.artist {
+    font-size: 13px;
+
+    color: #555555;
+}
+
+.title {
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+.role {
+    font-size: 11px;
+
+    color: #888888;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   SERVICE
+========================= */
+
+.service-section {
+    background: #f7f7f7;
+}
+
+
+/* =========================
+   PRICE CARD
+========================= */
+
+.price-card {
+    margin-bottom: 25px;
+
+    padding: 30px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+.price-card h3 {
+    margin-bottom: 20px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+.price-list {
+    border-top: 1px solid #dddddd;
+}
+
+.price-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #dddddd;
+
+    font-size: 14px;
+}
+
+.price-row strong {
+    color: #777777;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   GENRE
+========================= */
+
+.genre-section {
+    margin-top: 100px;
 }
 
 .small-heading {
@@ -252,192 +446,7 @@ body {
     color: #999999;
 }
 
-.works-heading h3 {
-    font-size: 28px;
-
-    font-weight: 500;
-}
-
-.playlist-box {
-    display: flex;
-
-    align-items: center;
-
-    gap: 25px;
-
-    padding: 35px;
-
-    border: 1px solid #dddddd;
-
-    background: #fafafa;
-}
-
-.playlist-icon {
-    width: 55px;
-
-    height: 55px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    border-radius: 50%;
-
-    background: #222222;
-
-    color: #ffffff;
-
-    font-size: 15px;
-}
-
-.playlist-text {
-    flex: 1;
-}
-
-.playlist-title {
-    margin-bottom: 5px;
-
-    font-size: 18px;
-
-    font-weight: 600;
-}
-
-.playlist-description {
-    font-size: 13px;
-
-    color: #888888;
-}
-
-.button {
-    padding: 12px 20px;
-
-    border: 1px solid #222222;
-
-    color: #222222;
-
-    text-decoration: none;
-
-    font-size: 10px;
-
-    letter-spacing: 0.12em;
-
-    transition: all 0.3s;
-}
-
-.button:hover {
-    background: #222222;
-
-    color: #ffffff;
-}
-
-
-/* =========================
-   WORK YEAR
-========================= */
-
-.works-year {
-    margin-bottom: 100px;
-}
-
-.year-title {
-    margin-bottom: 25px;
-
-    font-size: 24px;
-
-    font-weight: 600;
-
-    letter-spacing: 0.1em;
-}
-
-.work-list {
-    border-top: 1px solid #dddddd;
-}
-
-.work-item {
-    display: grid;
-
-    grid-template-columns: 100px 1fr auto;
-
-    gap: 30px;
-
-    align-items: center;
-
-    padding: 30px 0;
-
-    border-bottom: 1px solid #dddddd;
-}
-
-.work-date {
-    font-size: 11px;
-
-    color: #999999;
-}
-
-.work-info h3 {
-    margin-bottom: 4px;
-
-    font-size: 17px;
-
-    font-weight: 500;
-}
-
-.work-info p {
-    font-size: 12px;
-
-    color: #888888;
-}
-
-.work-role {
-    font-size: 11px;
-
-    color: #777777;
-}
-
-
-/* =========================
-   SERVICE
-========================= */
-
-.service-section {
-    background: #f7f7f7;
-}
-
-.price-list {
-    margin-bottom: 140px;
-
-    border-top: 1px solid #cccccc;
-}
-
-.price-item {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 25px 10px;
-
-    border-bottom: 1px solid #cccccc;
-}
-
-.price-name {
-    font-size: 16px;
-}
-
-.price-value {
-    font-size: 16px;
-
-    font-weight: 600;
-}
-
-
-/* =========================
-   GENRE
-========================= */
-
-.genre-section h3 {
+.genre-section > h3 {
     margin-bottom: 60px;
 
     font-size: 45px;
@@ -450,7 +459,7 @@ body {
 }
 
 .genre-title {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
     font-size: 12px;
 
@@ -461,69 +470,28 @@ body {
     color: #888888;
 }
 
-.genre-work {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 25px 0;
-
-    border-top: 1px solid #dddddd;
-
-    border-bottom: 1px solid #dddddd;
-}
-
-.genre-work h4 {
-    margin-bottom: 5px;
-
-    font-size: 17px;
-
-    font-weight: 500;
-}
-
-.genre-work p {
-    font-size: 12px;
-
-    color: #888888;
-}
-
-.text-link {
-    color: #222222;
-
-    text-decoration: none;
-
-    font-size: 10px;
-
-    letter-spacing: 0.15em;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-content {
+.genre-grid {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 80px;
-
-    align-items: center;
+    gap: 20px;
 }
 
-.about-image {
-    aspect-ratio: 1 / 1;
+.genre-card {
+    padding: 20px;
 
-    background: #eeeeee;
+    border: 1px solid #dddddd;
+
+    border-radius: 10px;
+
+    background: #ffffff;
 }
 
-.image-placeholder {
+.genre-video {
     width: 100%;
 
-    height: 100%;
+    aspect-ratio: 16 / 9;
 
     display: flex;
 
@@ -531,11 +499,80 @@ body {
 
     align-items: center;
 
+    margin-bottom: 18px;
+
+    background: #eeeeee;
+
+    border-radius: 7px;
+
+    color: #999999;
+
+    font-size: 11px;
+
+    letter-spacing: 0.12em;
+}
+
+.genre-info {
+    margin-bottom: 15px;
+}
+
+.genre-info h5 {
+    margin-bottom: 4px;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+.genre-info p {
+    font-size: 12px;
+
+    color: #888888;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-card {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    padding: 40px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+.about-image {
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #eeeeee;
+
+    border-radius: 7px;
+
     color: #999999;
 
     font-size: 11px;
 
     letter-spacing: 0.15em;
+}
+
+.about-text {
+    align-self: center;
 }
 
 .about-role {
@@ -576,27 +613,35 @@ body {
 .contact-description {
     max-width: 600px;
 
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 
-    font-size: 15px;
+    font-size: 14px;
 
     color: #666666;
 }
 
-.contact-links {
-    display: flex;
+.contact-card {
+    display: grid;
 
-    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
 
-    gap: 20px;
+    gap: 15px;
+
+    padding: 25px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 10px;
+
+    background: #ffffff;
 }
 
 .contact-link {
-    min-width: 150px;
+    padding: 18px;
 
-    padding: 20px 30px;
+    border: 1px solid #dddddd;
 
-    border: 1px solid #cccccc;
+    border-radius: 7px;
 
     color: #222222;
 
@@ -646,61 +691,75 @@ body {
 @media (max-width: 700px) {
 
     .header {
-        padding: 20px;
+        padding: 18px 20px;
     }
 
     .nav {
-        gap: 15px;
+        gap: 12px;
     }
 
     .nav a {
-        font-size: 9px;
+        font-size: 8px;
     }
+
 
     .section {
-        padding: 100px 25px;
+        padding: 100px 20px;
     }
 
-    .playlist-box {
-        flex-direction: column;
 
-        align-items: flex-start;
+    .works-feature-grid {
+        grid-template-columns: 1fr;
     }
 
-    .work-item {
+
+    .year-card {
+        padding: 20px;
+    }
+
+
+    .year-work {
         grid-template-columns: 1fr;
 
-        gap: 8px;
+        gap: 5px;
 
-        padding: 25px 0;
+        padding: 18px 0;
     }
 
-    .work-date {
-        display: none;
-    }
-
-    .work-role {
+    .role {
         margin-top: 5px;
+
+        white-space: normal;
     }
 
-    .about-content {
+
+    .price-card {
+        padding: 20px;
+    }
+
+    .price-row {
+        font-size: 13px;
+    }
+
+
+    .genre-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-card {
         grid-template-columns: 1fr;
 
-        gap: 50px;
+        padding: 20px;
+
+        gap: 40px;
     }
 
-    .genre-work {
-        align-items: flex-start;
 
-        gap: 20px;
-    }
+    .contact-card {
+        grid-template-columns: 1fr;
 
-    .contact-links {
-        flex-direction: column;
-    }
-
-    .contact-link {
-        width: 100%;
+        padding: 15px;
     }
 
 }

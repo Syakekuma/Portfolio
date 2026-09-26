@@ -869,6 +869,11 @@ body {
         grid-template-columns: 1fr;
     }
 
+   .genre-section h3 {
+    font-size: 24px;
+    white-space: nowrap;
+   }
+
 
     /* =========================
        ABOUT
@@ -898,24 +903,27 @@ body {
     ========================= */
 
     .contact-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        padding: 15px;
-        text-align: center;
-        box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    text-align: center;
     }
 
-    .contact-link {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        box-sizing: border-box;
-        margin-left: auto;
-        margin-right: auto;
+.contact-link {
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    box-sizing: border-box;
     }
 
 }

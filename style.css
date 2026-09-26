@@ -777,13 +777,13 @@ body {
 　　
    
     .hero {
-        min-height: 80vh;
+        min-height: 85vh;
     }
 
     .hero-character {
         width: 65vw;
         right: -5%;
-        bottom: 3%;
+        bottom: 0%;
     }
 
 }

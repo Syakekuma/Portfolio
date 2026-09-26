@@ -441,6 +441,20 @@ body {
     white-space: nowrap;
 }
 
+.notes-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.notes-list li {
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+.notes-list li:last-child {
+    margin-bottom: 0;
+}
+
 
 /* =========================
    GENRE

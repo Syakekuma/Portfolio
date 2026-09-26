@@ -224,7 +224,7 @@ body {
 }
 
 .section h2 {
-    margin-bottom: 25px;
+    margin-bottom: 18px;
 
     font-size: clamp(50px, 8vw, 90px);
 

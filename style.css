@@ -762,42 +762,43 @@ body {
 @media (max-width: 700px) {
 
     .header {
-    padding: 18px 12px;
+        padding: 18px 12px;
     }
 
-.logo {
-    font-size: 12px;
-    white-space: nowrap;
-    flex-shrink: 0;
+    .logo {
+        font-size: 12px;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
-.nav {
-    display: flex;
-    gap: 5px;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    flex: 1;
-    justify-content: center;
+    .nav {
+        display: flex;
+        gap: 5px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        flex: 1;
+        justify-content: center;
     }
 
-.nav a {
-    font-size: 9px;
-    white-space: nowrap;
-    padding: 8px 2px;
+    .nav a {
+        font-size: 9px;
+        white-space: nowrap;
+        padding: 8px 2px;
     }
+
 
     /* =========================
        HERO
     ========================= */
 
     .hero {
-    min-height: 100vh;
+        min-height: 75vh;
     }
 
     .hero-content {
-    transform: translateY(-70px);
-    position: relative;
-    z-index: 2;
+        transform: translateY(-70px);
+        position: relative;
+        z-index: 2;
     }
 
     .hero-catch {

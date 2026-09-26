@@ -796,7 +796,7 @@ body {
     }
 
     .hero-content {
-        transform: translateY(-40px);
+        transform: translateY(-70px);
         position: relative;
         z-index: 2;
     }

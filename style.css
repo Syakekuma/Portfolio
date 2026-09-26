@@ -826,7 +826,7 @@ body {
 　　
    
     .hero {
-        min-height: 85vh;
+        min-height: 75vh;
     }
 
     .hero-character {
@@ -836,7 +836,7 @@ body {
     }
 
    .hero-content {
-    transform: translateY(-50px);
+    transform: translateY(0px);
 　　}
    
 }

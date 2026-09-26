@@ -762,30 +762,29 @@ body {
 @media (max-width: 700px) {
 
     .header {
-    padding: 14px 10px;
+    padding: 18px 12px;
     }
 
-    .logo {
-    font-size: 11px;
+.logo {
+    font-size: 12px;
     white-space: nowrap;
     flex-shrink: 0;
-    letter-spacing: 0.05em;
     }
 
 .nav {
     display: flex;
-    gap: 4px;
+    gap: 5px;
     flex-wrap: nowrap;
     white-space: nowrap;
-    flex-shrink: 1;
+    flex: 1;
+    justify-content: center;
     }
 
 .nav a {
-    font-size: 7px;
+    font-size: 9px;
     white-space: nowrap;
-    letter-spacing: 0.08em;
+    padding: 8px 2px;
     }
-
 
     /* =========================
        HERO
@@ -796,6 +795,7 @@ body {
     }
 
     .hero-content {
+    transform: translateY(-70px);
     position: relative;
     z-index: 2;
     }

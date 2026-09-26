@@ -766,21 +766,23 @@ body {
     }
 
     .logo {
-        font-size: 14px;
-        white-space: nowrap;
-        flex-shrink: 0;
-    }
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+　　}
 
-    .nav {
-        gap: 6px;
-        flex-wrap: nowrap;
-        white-space: nowrap;
-    }
+　　.nav {
+    gap: 4px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    flex: 1;
+    justify-content: flex-end;
+　　}
 
-    .nav a {
-        font-size: 8px;
-        white-space: nowrap;
-    }
+　　.nav a {
+    font-size: 8px;
+    white-space: nowrap;
+　　}
 
 
     /* =========================

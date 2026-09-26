@@ -735,6 +735,18 @@ body {
     border-color: #222222;
 }
 
+.social-links {
+    flex-wrap: nowrap;
+    gap: 6px;
+}
+
+.social-links a {
+    min-width: 0;
+    flex: 1;
+    padding: 10px 6px;
+    font-size: 11px;
+}
+
 
 /* =========================
    FOOTER

@@ -766,8 +766,13 @@ body {
     }
 
    .logo {
+    font-size: 14px;
     white-space: nowrap;
-    font-size: 18px;
+　　}
+
+   .hero h2 {
+    font-size: 24px;
+    white-space: nowrap;
 　　}
 
     .nav {
@@ -783,6 +788,10 @@ body {
         padding: 100px 20px;
     }
 
+   .section-title {
+    font-size: 24px;
+    white-space: nowrap;
+　　}
 
     .works-feature-grid {
         grid-template-columns: 1fr;
@@ -839,17 +848,16 @@ body {
     }
 
    .social-links {
-    flex-wrap: nowrap;
-    gap: 6px;
-}
+    　　flex-wrap: nowrap;
+    　　gap: 6px;
+　　}
 
-.social-links a {
-    min-width: 0;
-    flex: 1;
-    padding: 10px 6px;
-    font-size: 11px;
-}
-　　
+   .social-links a {
+    　　min-width: 0;
+   　　 flex: 1;
+   　　 padding: 10px 6px;
+   　　 font-size: 11px;
+　　}
    
     .hero {
         min-height: 65vh;
@@ -862,18 +870,18 @@ body {
     }
 
    .hero-content {
-    transform: translateY(0px);
+   　　 transform: translateY(0px);
 　　}
 
    .contact-card {
-    text-align: center;
-}
+   　　 text-align: center;
+　　}
 
-.contact-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+　　.contact-link {
+    　　display: flex;
+    　　align-items: center;
+    　　justify-content: center;
+   　　 text-align: center;
 }
    
 }

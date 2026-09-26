@@ -864,6 +864,17 @@ body {
    .hero-content {
     transform: translateY(0px);
 　　}
+
+   .contact-card {
+    text-align: center;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
    
 }
    

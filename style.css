@@ -802,12 +802,12 @@ body {
     }
 
     .hero-catch {
-    font-size: 20px;
+    font-size: 15px;
     white-space: nowrap;
     }
 
     .hero-character {
-        width: 65vw;
+        width: 60vw;
         right: -5%;
         bottom: 0;
     }
@@ -815,9 +815,9 @@ body {
    .hero-name {
     font-size: 15px;
     color: #222222;
-    letter-spacing: 0.08em;
+    letter-spacing: 0em;
     font-weight: 700;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
 }
 
 

@@ -1,18 +1,147 @@
-body {
-    background-color: #111111;
-    color: white;
-    font-family: sans-serif;
-    text-align: center;
-    padding-top: 200px;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-h1 {
-    font-size: 80px;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ヘッダー */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px 50px;
+
+    z-index: 100;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 13px;
+    letter-spacing: 0.15em;
+}
+
+
+/* メインビジュアル */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+.hero-subtitle {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+
+    margin-bottom: 25px;
+
+    opacity: 0.6;
+}
+
+.hero h1 {
+    font-size: clamp(70px, 14vw, 180px);
+
+    font-weight: 700;
+
+    letter-spacing: 0.03em;
+
+    line-height: 0.9;
+
+    margin-bottom: 50px;
+}
+
+.hero-catch {
+    font-size: clamp(20px, 3vw, 36px);
+
+    line-height: 1.4;
+
     letter-spacing: 0.05em;
+}
+
+.scroll {
+    margin-top: 100px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 0.2em;
+
+    opacity: 0.5;
+}
+
+
+/* 各セクション */
+
+.section {
+    min-height: 70vh;
+
+    padding: 150px 10vw;
+}
+
+.section-label {
+    font-size: 11px;
+
+    letter-spacing: 0.2em;
+
+    opacity: 0.5;
+
     margin-bottom: 20px;
 }
 
-p {
-    font-size: 18px;
-    opacity: 0.8;
+.section h2 {
+    font-size: clamp(50px, 8vw, 100px);
+
+    margin-bottom: 40px;
+}
+
+.section p {
+    line-height: 2;
+
+    font-size: 16px;
 }

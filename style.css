@@ -811,6 +811,13 @@ body {
         bottom: 0;
     }
 
+   .hero-name {
+    font-size: 15px;
+    color: #222222;
+    letter-spacing: 0.08em;
+    margin-bottom: 5px;
+}
+
 
     /* =========================
        SECTION

@@ -44,7 +44,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    padding: 18px max(30px, calc((100% - 700px) / 2));
+    padding: 18px max(30px, calc((100% - 1000px) / 2));
 
     background: rgba(255, 255, 255, 0.94);
 

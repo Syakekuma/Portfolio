@@ -766,13 +766,13 @@ body {
 .hero-character {
     position: absolute;
 
-    right: 3%;
+    right: 2%;
     bottom: 0;
 
-    width: min(45vw, 600px);
+    width: min(40vw, 550px);
     height: auto;
 
-    z-index: 2;
+    z-index: 1;
 
     pointer-events: none;
 }

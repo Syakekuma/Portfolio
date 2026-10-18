@@ -207,113 +207,49 @@
 
 
 
-                <!-- ==================== 料金 ==================== -->
-
-                <div class="price-card">
-
-                    <h3>
-                        楽曲制作(個人様向け)
-                    </h3>
-
-
-                    <div class="price-list">
-
-                        <div class="price-row">
-
-                            <span>
-                                作詞・作曲・編曲・Vo.MIX
-                            </span>
-
-                            <strong>
-                                ¥88,000～
-                            </strong>
-
+                <!-- ==================== 料金シミュレーター ==================== -->
+                <div class="price-card price-simulator" id="price-simulator">
+                    <h3>お見積もりシミュレーター</h3>
+                    <p class="simulator-description">ご希望の内容を選択すると、目安金額が自動で表示されます。</p>
+                    <fieldset class="simulator-group">
+                        <legend>01 / 施工範囲 <span>複数選択可</span></legend>
+                        <div class="simulator-options simulator-options-scope">
+                            <button type="button" class="simulator-option" data-scope="作詞" aria-pressed="false">作詞</button>
+                            <button type="button" class="simulator-option" data-scope="作曲" aria-pressed="false">作曲</button>
+                            <button type="button" class="simulator-option" data-scope="編曲" aria-pressed="false">編曲</button>
+                            <button type="button" class="simulator-option" data-scope="VoMIX" aria-pressed="false">VoMIX</button>
                         </div>
-
-
-                        <div class="price-row">
-
-                            <span>
-                                作詞・作曲・編曲
-                            </span>
-
-                            <strong>
-                                ¥80,000～
-                            </strong>
-
+                    </fieldset>
+                    <fieldset class="simulator-group">
+                        <legend>02 / 用途</legend>
+                        <div class="simulator-options simulator-options-two">
+                            <button type="button" class="simulator-option" data-usage="個人" aria-pressed="false">個人</button>
+                            <button type="button" class="simulator-option" data-usage="商用" aria-pressed="false">商用</button>
                         </div>
-
-
-                        <div class="price-row">
-
-                            <span>
-                                作曲・編曲
-                            </span>
-
-                            <strong>
-                                ¥70,000～
-                            </strong>
-
+                    </fieldset>
+                    <fieldset class="simulator-group">
+                        <legend>03 / 納期</legend>
+                        <div class="simulator-options simulator-options-two">
+                            <button type="button" class="simulator-option" data-deadline="通常" aria-pressed="false"><span>通常</span><small>1か月〜6か月</small></button>
+                            <button type="button" class="simulator-option" data-deadline="お急ぎ" aria-pressed="false"><span>お急ぎ</span><small>2週間〜1か月</small></button>
                         </div>
-
-
-                        <div class="price-row">
-
-                            <span>
-                                編曲のみ
-                            </span>
-
-                            <strong>
-                                ¥60,000～
-                            </strong>
-
-                        </div>
-
-
-                        <div class="price-row">
-
-                            <span>
-                                その他(作詞のみ、MIXのみ等)
-                            </span>
-
-                            <strong>
-                                要相談
-                            </strong>
-
-                        </div>
-
-
+                    </fieldset>
+                    <div class="simulator-result" aria-live="polite" aria-atomic="true">
+                        <p class="simulator-result-label">目安金額</p>
+                        <p class="simulator-result-value" id="estimated-price">¥-----</p>
+                        <p class="simulator-result-note" id="estimated-price-note">施工範囲・用途・納期を選択してください。</p>
                     </div>
-
                 </div>
-
-
-
-                <!-- ==================== オプション ==================== -->
-
+                <!-- ==================== 備考 ==================== -->
                 <div class="price-card">
-
-    <h3>備考</h3>
-
-    <ul class="notes-list">
-        <li>
-            制作内容や条件に応じて、作業内容の調整や料金のご相談も可能です。ご予算が足りない場合もお気兼ねなくご相談ください！
-        </li>
-
-        <li>
-            制作期間は、基本的にご依頼確定から30日程度を目安として考えていただけましたら幸いです。
-        </li>
-
-        <li>
-            著作権につきましては、基本的に鮭熊が保有しますが、納品した楽曲のご使用について、営利・非営利を問わずこちらから制限することはございません。
-        </li>
-
-        <li>
-            法人様からのご依頼につきましては、制作内容・用途・ご予算などをお伺いしたうえで、個別にお見積もりいたします。まずはお気軽にお問い合わせください。
-        </li>
-    </ul>
-
-</div>
+                    <h3>備考</h3>
+                    <ul class="notes-list">
+                        <li>表示金額はあくまで目安です。制作内容や条件によって異なる場合があります。</li>
+                        <li>制作期間は、基本的にご依頼確定から30日程度を目安としております。</li>
+                        <li>著作権につきましては、基本的に鮭熊が保有しますが、納品した楽曲のご使用について、営利・非営利を問わずこちらから制限することはございません。</li>
+                        <li>法人様からのご依頼につきましては、制作内容・用途・ご予算などをお伺いしたうえで、個別にお見積もりいたします。</li>
+                    </ul>
+                </div>
 
 
 
@@ -737,9 +673,106 @@ allowfullscreen>
 
 
     <script>
+        (() => {
+            const root = document.getElementById("price-simulator");
+            if (!root) return;
+            const selectedScopes = new Set();
+            let selectedUsage = "";
+            let selectedDeadline = "";
+            const priceElement = document.getElementById("estimated-price");
+            const noteElement = document.getElementById("estimated-price-note");
+            let animationFrame = null;
+            let previousAmount = null;
+            const basePrices = {
+                "作詞|作曲|編曲|VoMIX": 88000,
+                "作詞|作曲|編曲": 80000,
+                "作曲|編曲": 70000,
+                "編曲": 60000,
+                "作詞|作曲": 40000,
+                "作曲": 30000,
+                "作詞": 10000
+            };
+            const scopeOrder = ["作詞", "作曲", "編曲", "VoMIX"];
+
+            function animatePrice(target) {
+                if (animationFrame) cancelAnimationFrame(animationFrame);
+                if (target === null) {
+                    priceElement.textContent = "¥-----";
+                    priceElement.classList.remove("is-counting", "is-unavailable");
+                    previousAmount = null;
+                    return;
+                }
+                priceElement.classList.remove("is-unavailable");
+                const start = previousAmount === null ? Math.max(0, Math.floor(target * 0.72)) : previousAmount;
+                const duration = 420;
+                const startTime = performance.now();
+                priceElement.classList.add("is-counting");
+                function tick(now) {
+                    const progress = Math.min(1, (now - startTime) / duration);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.round(start + (target - start) * eased);
+                    priceElement.textContent = "¥" + current.toLocaleString("ja-JP") + "〜";
+                    if (progress < 1) animationFrame = requestAnimationFrame(tick);
+                    else {
+                        priceElement.classList.remove("is-counting");
+                        previousAmount = target;
+                        animationFrame = null;
+                    }
+                }
+                animationFrame = requestAnimationFrame(tick);
+            }
+
+            function updatePrice() {
+                const scopes = scopeOrder.filter(scope => selectedScopes.has(scope));
+                if (!scopes.length || !selectedUsage || !selectedDeadline) {
+                    animatePrice(null);
+                    noteElement.textContent = "施工範囲・用途・納期を選択してください。";
+                    return;
+                }
+                const base = basePrices[scopes.join("|")];
+                if (!base) {
+                    if (animationFrame) cancelAnimationFrame(animationFrame);
+                    priceElement.textContent = "受け付けておりません";
+                    priceElement.classList.remove("is-counting");
+                    priceElement.classList.add("is-unavailable");
+                    previousAmount = null;
+                    noteElement.textContent = "選択された施工範囲は現在お受けしておりません。";
+                    return;
+                }
+                const multiplier = (selectedUsage === "商用" ? 1.5 : 1) * (selectedDeadline === "お急ぎ" ? 1.25 : 1);
+                animatePrice(Math.round(base * multiplier));
+                noteElement.textContent = `${selectedUsage}・${selectedDeadline === "通常" ? "通常納期" : "お急ぎ納期"}の概算です。`;
+            }
+            root.querySelectorAll("[data-scope]").forEach(button => {
+                button.addEventListener("click", () => {
+                    const scope = button.dataset.scope;
+                    if (selectedScopes.has(scope)) selectedScopes.delete(scope);
+                    else selectedScopes.add(scope);
+                    button.setAttribute("aria-pressed", String(selectedScopes.has(scope)));
+                    updatePrice();
+                });
+            });
+            root.querySelectorAll("[data-usage]").forEach(button => {
+                button.addEventListener("click", () => {
+                    selectedUsage = button.dataset.usage;
+                    root.querySelectorAll("[data-usage]").forEach(option => option.setAttribute("aria-pressed", String(option === button)));
+                    updatePrice();
+                });
+            });
+            root.querySelectorAll("[data-deadline]").forEach(button => {
+                button.addEventListener("click", () => {
+                    selectedDeadline = button.dataset.deadline;
+                    root.querySelectorAll("[data-deadline]").forEach(option => option.setAttribute("aria-pressed", String(option === button)));
+                    updatePrice();
+                });
+            });
+        })();
+    </script>
+
+    <script>
         // Google Apps ScriptをウェブアプリとしてデプロイしたURLを設定してください。
         // 例: https://script.google.com/macros/s/XXXXXXXX/exec
-        const WORKS_API_URL = "https://script.google.com/macros/s/AKfycbwpS-d4ebatZ5e16JsW1qYhy7gMyK9lKpkgRmA1lfcr1i1p9oxEvhrCPsjftuhDv1Td/exec";
+        const WORKS_API_URL = "PASTE_DEPLOYED_WEB_APP_URL_HERE";
 
         const categoryOrder = { "VOCALOID": 1, "自主制作": 2 };
 
